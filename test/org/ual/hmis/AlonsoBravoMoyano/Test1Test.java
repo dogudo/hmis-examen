@@ -46,6 +46,11 @@ public class Test1Test {
   public void test1() {
     driver.get("http://34.71.203.97:8080/");
     driver.manage().window().setSize(new Dimension(1382, 744));
+    try {
+        Thread.sleep(2000);
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
     driver.findElement(By.cssSelector(".form-control")).click();
     driver.findElement(By.cssSelector(".form-control")).sendKeys("prueba1");
     driver.findElement(By.cssSelector(".form-control")).sendKeys(Keys.ENTER);
