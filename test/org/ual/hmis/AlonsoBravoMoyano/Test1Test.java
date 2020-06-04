@@ -25,13 +25,12 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-public class Testtodo2appTest {
+public class Test1Test {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
   @Before
   public void setUp() {
-	//Jenkins de Firefox
       FirefoxOptions firefoxOptions = new FirefoxOptions();
       firefoxOptions.setHeadless(true);
       driver = new FirefoxDriver(firefoxOptions);
@@ -44,14 +43,14 @@ public class Testtodo2appTest {
     driver.quit();
   }
   @Test
-  public void testtodo2app() {
+  public void test1() {
     driver.get("http://34.71.203.97:8080/");
-    driver.manage().window().setSize(new Dimension(868, 692));
+    driver.manage().window().setSize(new Dimension(1382, 744));
     driver.findElement(By.cssSelector(".form-control")).click();
-    driver.findElement(By.cssSelector(".form-control")).sendKeys("hola");
-    driver.findElement(By.cssSelector(".btn")).click();
+    driver.findElement(By.cssSelector(".form-control")).sendKeys("prueba1");
+    driver.findElement(By.cssSelector(".form-control")).sendKeys(Keys.ENTER);
     driver.findElement(By.cssSelector(".form-control")).click();
-    driver.findElement(By.cssSelector(".form-control")).sendKeys("hola2");
+    driver.findElement(By.cssSelector(".form-control")).sendKeys("prueba2");
     driver.findElement(By.cssSelector(".btn-success")).click();
     {
       WebElement element = driver.findElement(By.cssSelector(".btn-success"));
@@ -63,7 +62,8 @@ public class Testtodo2appTest {
       Actions builder = new Actions(driver);
       builder.moveToElement(element, 0, 0).perform();
     }
-    driver.findElement(By.cssSelector(".item:nth-child(2) .fa")).click();
+    driver.findElement(By.cssSelector(".item:nth-child(3) .remove > .btn")).click();
+    driver.findElement(By.cssSelector(".far")).click();
     driver.findElement(By.cssSelector(".fa")).click();
   }
 }
