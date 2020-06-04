@@ -10,6 +10,7 @@ import static org.hamcrest.core.IsNot.not;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -30,11 +31,13 @@ public class Testtodo1appTest {
   JavascriptExecutor js;
   @Before
   public void setUp() {
-	//System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
-	//System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-    driver = new FirefoxDriver();
-    js = (JavascriptExecutor) driver;
-    vars = new HashMap<String, Object>();
+	//Jenkins de Firefox
+      FirefoxOptions firefoxOptions = new FirefoxOptions();
+      firefoxOptions.setHeadless(true);
+      driver = new FirefoxDriver(firefoxOptions);
+
+      js = (JavascriptExecutor) driver;
+      vars = new HashMap<String, Object>();
   }
   @After
   public void tearDown() {
