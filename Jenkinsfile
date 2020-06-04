@@ -11,7 +11,7 @@ pipeline {
         stage('Git clone') {
             steps{
                 // Update the URL to your repo
-                git 'https://github.com/'
+                git 'https://github.com/dogudo/hmis-examen'
             }
         }
         stage('Firefox tests') {
