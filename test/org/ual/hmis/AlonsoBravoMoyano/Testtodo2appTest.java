@@ -31,13 +31,9 @@ public class Testtodo2appTest {
   JavascriptExecutor js;
   @Before
   public void setUp() {
-	//Jenkins de Firefox
-      FirefoxOptions firefoxOptions = new FirefoxOptions();
-      firefoxOptions.setHeadless(true);
-      driver = new FirefoxDriver(firefoxOptions);
-
-      js = (JavascriptExecutor) driver;
-      vars = new HashMap<String, Object>();
+    driver = new ChromeDriver();
+    js = (JavascriptExecutor) driver;
+    vars = new HashMap<String, Object>();
   }
   @After
   public void tearDown() {
